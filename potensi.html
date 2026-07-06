@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Leaflet  -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+    <link rel="icon" href="assets/images/logo-pacitan.jpg">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+
+
+</head>
+
+<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+
+<body>
+
+    <!-- ===========================
+            NAVBAR
+    ============================ -->
+
+    <nav class="navbar navbar-expand-lg fixed-top">
+
+        <div class="container">
+
+            <a class="navbar-brand" href="index.html">
+
+                <img src="assets/images/logo-pacitan.jpg" alt="Logo Desa">
+
+                <span>Desa Pagerkidul</span>
+
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarMenu">
+
+                <ul class="navbar-nav mx-auto">
+
+                    <li class="nav-item">
+
+                        <a class="nav-link" href="index.html">
+
+                            Home
+
+                        </a>
+
+                    </li>
+
+                    <li class="nav-item">
+
+                        <a class="nav-link" href="profil.html">
+
+                            Profil Desa
+
+                        </a>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="perangkat.html">
+                            Perangkat Desa
+                        </a>
+                    </li>
+
+                    </li>
+
+                    <li class="nav-item">
+
+                        <a class="nav-link" href="statistik.html">
+
+                            Statistik
+
+                        </a>
+
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="potensi.html">
+                            Potensi Desa
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="umkm.html">
+                            UMKM Desa
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#lokasi">
+                            Lokasi
+                        </a>
+                    </li>
+
+                </ul>
+
+                <a href="admin.html" class="btn btn-login" data-action="login">
+
+                    Login Admin
+
+                </a>
+
+
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <!-- ===========================
+        POTENSI DESA
+    =========================== -->
+
+    <section class="gallery" id="potensi" data-aos="fade-up">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <span class="section-badge">
+                    <i class="bi bi-tree-fill"></i>
+                    Potensi Desa
+                </span>
+
+                <h2>Potensi Unggulan Desa Pagerkidul</h2>
+
+                <p>
+                    Desa Pagerkidul memiliki berbagai potensi di sektor pertanian, peternakan,
+                    UMKM, dan wisata yang menjadi kekuatan ekonomi masyarakat.
+                </p>
+
+            </div>
+
+            <div class="row g-4">
+
+                <!-- Potensi 1 -->
+                <div class="col-lg-3 col-md-6">
+
+                    <div class="potensi-card">
+
+                        <img src="assets/images/desa.JPG" alt="Pertanian">
+
+                        <div class="potensi-content">
+
+                            <div class="potensi-icon">
+                                <i class="bi bi-flower1"></i>
+                            </div>
+
+                            <h4>Pertanian</h4>
+
+                            <p>
+                                Komoditas utama berupa padi, jagung, dan singkong yang menjadi
+                                sumber penghasilan masyarakat.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Potensi 2 -->
+                <div class="col-lg-3 col-md-6">
+
+                    <div class="potensi-card">
+
+                        <img src="assets/images/desa.JPG" alt="Peternakan">
+
+                        <div class="potensi-content">
+
+                            <div class="potensi-icon">
+                                <i class="bi bi-house-heart-fill"></i>
+                            </div>
+
+                            <h4>Peternakan</h4>
+
+                            <p>
+                                Peternakan kambing dan sapi menjadi salah satu sektor ekonomi
+                                unggulan masyarakat desa.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Potensi 3 -->
+                <div class="col-lg-3 col-md-6">
+
+                    <div class="potensi-card">
+
+                        <img src="assets/images/desa.JPG" alt="UMKM">
+
+                        <div class="potensi-content">
+
+                            <div class="potensi-icon">
+                                <i class="bi bi-shop"></i>
+                            </div>
+
+                            <h4>UMKM</h4>
+
+                            <p>
+                                Berbagai produk olahan pangan dan kerajinan lokal terus
+                                dikembangkan oleh masyarakat.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Potensi 4 -->
+                <div class="col-lg-3 col-md-6">
+
+                    <div class="potensi-card">
+
+                        <img src="assets/images/desa.JPG" alt="Wisata">
+
+                        <div class="potensi-content">
+
+                            <div class="potensi-icon">
+                                <i class="bi bi-camera-fill"></i>
+                            </div>
+
+                            <h4>Wisata Alam</h4>
+
+                            <p>
+                                Memiliki panorama alam yang masih asri dan berpotensi menjadi
+                                destinasi wisata berbasis desa.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ===========================
+        FOOTER
+    ============================ -->
+
+    <footer class="footer">
+
+        <div class="container">
+
+            <div class="row gy-5">
+
+                <div class="col-lg-4">
+
+                    <div class="footer-brand">
+
+                        <img src="assets/images/logo-pacitan.jpg" class="footer-logo" alt="Logo">
+
+                        <h4>Desa Pagerkidul</h4>
+
+                    </div>
+
+                    <p>
+                        Website resmi Desa Pagerkidul sebagai media informasi,
+                        pelayanan publik, transparansi pemerintahan,
+                        dan promosi potensi desa.
+
+                    </p>
+
+                </div>
+
+                <div class="col-lg-2">
+
+                    <h5>Menu</h5>
+
+                    <ul>
+
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="profil.html">Profil Desa</a></li>
+                        <li><a href="statistik.html">Statistik</a></li>
+                        <li><a href="potensi.html">Potensi</a></li>
+                        <li><a href="umkm.html">UMKM</a></li>
+
+                    </ul>
+
+                </div>
+
+                <div class="col-lg-3">
+
+                    <h5>Kontak</h5>
+
+                    <ul>
+
+                        <li>
+
+                            <i class="bi bi-geo-alt"></i>
+
+                            Pacitan, Jawa Timur
+
+                        </li>
+
+                        <li>
+
+                            <i class="bi bi-envelope"></i>
+
+                            desa@pagerkidul.id
+
+                        </li>
+
+                        <li>
+
+                            <i class="bi bi-telephone"></i>
+
+                            (0357) 000000
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <div class="col-lg-3">
+
+                    <h5>Ikuti Kami</h5>
+
+                    <div class="social">
+
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+
+                        <a href="#"><i class="bi bi-youtube"></i></a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <hr>
+
+            <div class="copyright">
+
+                © 2026 Desa Pagerkidul. All Rights Reserved.
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    <!-- ===========================
+        JAVASCRIPT
+    ============================ -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+    </script>
+
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/admin-login-ui.js"></script>
+
+</body>
+
+</html>
+

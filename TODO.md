@@ -5,7 +5,7 @@
 - [x] Push ke GitHub
 
 ## Step 1 - Landing page (index.html)
-- [ ] Potong index.html agar berisi: NAVBAR + HERO + PROFIL (ringkas sampai visi-misi) + DIVIDER + LOKASI + FOOTER
+- [ ] Potong index.html agar berisi: NAVBAR + HERO + PROFIL (ringkas sampai visi-misi) + DIVIDER + LOKASI (di bagian bawah) + FOOTER
 - [ ] Update navbar link:
   - Home -> index.html
   - Profil Desa -> profil.html
@@ -13,7 +13,7 @@
   - Statistik -> statistik.html
   - Potensi -> potensi.html
   - UMKM -> umkm.html
-  - Lokasi -> index.html (atau lokasi.html sesuai keputusan)
+  - Lokasi -> index.html
 - [ ] Update footer menu link senada
 
 ## Step 2 - Buat halaman baru
@@ -46,4 +46,5 @@
 ## Step 5 - (Opsional) perapihan
 - [ ] Rapikan link yang sebelumnya menuju `#galeri` (di index tidak ada section #galeri)
 - [ ] Buat 301/redirect jika dibutuhkan (opsional)
+- [x] Lokasi tetap di landing `index.html`
 
