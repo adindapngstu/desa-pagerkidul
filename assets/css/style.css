@@ -1845,11 +1845,12 @@ section:nth-child(even)::before {
 
     width: 100%;
 
-    height: 100%;
+    height: 520px; /* Leaflet butuh tinggi fixed/terbaca */
 
     min-height: 520px;
 
 }
+
 
 .info-card {
 

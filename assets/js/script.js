@@ -1,8 +1,13 @@
-Chart.defaults.font.family = "Poppins";
-Chart.defaults.color = "#475569";
-Chart.defaults.borderColor = "#E5E7EB";
-Chart.defaults.responsive = true;
-Chart.defaults.maintainAspectRatio = false;
+// Guard: Script ini juga menginisialisasi Leaflet map.
+// Kalau Chart.js belum termuat (mis. halaman tertentu), jangan sampai throw error
+// yang menghentikan eksekusi JS dan membuat map tidak terinisialisasi.
+if (typeof Chart !== "undefined") {
+    Chart.defaults.font.family = "Poppins";
+    Chart.defaults.color = "#475569";
+    Chart.defaults.borderColor = "#E5E7EB";
+    Chart.defaults.responsive = true;
+    Chart.defaults.maintainAspectRatio = false;
+}
 function createBarChart(id, labels, data, colors) {
 
     const canvas = document.getElementById(id);
@@ -342,33 +347,38 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
 
 });
 const mapElement = document.getElementById("map");
-
 if (mapElement) {
+    // Pastikan Leaflet init sekali saja.
+    // Masalah umum: Leaflet diinisialisasi sebelum tinggi container terhitung
+    // atau terjadi init ganda (map variabel tidak ada / tile layer ditambah ke map yang belum dibuat).
+    const coords = [-8.235525127926323, 111.34915231024438];
 
-    const map = L.map("map").setView([-8.235525127926323, 111.34915231024438], 13);
+    const initMap = () => {
+        // Hindari init ganda
+        if (mapElement._leaflet_id) return;
 
-    L.tileLayer(
+        const map = L.map("map", { zoomControl: true }).setView(coords, 13);
 
-        "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+        L.tileLayer(
+            "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+            { attribution: "© OpenStreetMap" }
+        ).addTo(map);
 
-        {
+        L.marker(coords)
+            .addTo(map)
+            .bindPopup("<b>Kantor Desa Pagerkidul</b>");
 
-            attribution: "© OpenStreetMap"
+        // Refresh ukuran setelah render DOM selesai
+        setTimeout(() => map.invalidateSize(), 200);
+        setTimeout(() => map.invalidateSize(), 600);
+        console.log('initMap');
+    };
 
-        }
-
-    ).addTo(map);
-
-    L.marker([-8.235525127926323, 111.34915231024438])
-
-        .addTo(map)
-
-        .bindPopup("<b>Kantor Desa Pagerkidul</b>");
-    setTimeout(() => {
-        map.invalidateSize();
-    }, 200);
-
+    // jalankan setelah load + beberapa frame supaya layout (Bootstrap/AOS) sudah stabil
+    requestAnimationFrame(() => requestAnimationFrame(initMap));
+    window.addEventListener("load", initMap, { once: true });
 }
+
 const lightbox = GLightbox({
     selector: '.gallery-item'
 });
